@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color:rgba(255, 255, 255, 0.6);
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: center;
+        }
+
+        .radio-group label {
+            margin-right: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .input-group input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+        }
+
+        .input-group button {
+            width: 25%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .button {
+            background-color: rgb(150, 178, 190);
+            transition-duration: 0.4s;
+            border: 2px solid #0065b7;
+            font-size: 15px;
+            padding: 10px 24px;
+        }
+
+        .button:hover {
+         background-color: #155d98;
+        color: rgb(255, 255, 255);
+        border: 2px solid
+        }
+        body{
+            background-image: url("Background1.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            
+
+        }
+    
+        .center {
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <div class="center">
+        <font face="Tempus Sans ITC" size=5 >Hi There! Welcome to our Site...</font>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container" >
+        <h1>Temperature Converter</h1>
+        <div class="radio-group">
+            <label><input type="radio" name="unit" value="celsius"> Celsius to Fahrenheit</label>
+            <label><input type="radio" name="unit" value="fahrenheit"> Fahrenheit to Celsius</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="temperature" placeholder="Enter temperature" />
+        </div>
+        <br>
+        &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;&emsp;<button class="button" onclick="convertTemperature()">Convert</button>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const temperatureInput = document.getElementById("temperature").value;
+            const selectedUnit = document.querySelector('input[name="unit"]:checked').value;
+            let result;
+
+            if (selectedUnit === "celsius") {
+                result = (temperatureInput * 9/5) + 32;
+                result = result.toFixed(2) + "°F";
+            } else {
+                result = (temperatureInput - 32) * 5/9;
+                result = result.toFixed(2) + "°C";
+            }
+
+            document.getElementById("result").textContent = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html
